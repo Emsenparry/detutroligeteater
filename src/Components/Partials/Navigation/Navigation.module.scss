@@ -4,10 +4,9 @@
     list-style-type: none;
     li {
       display: inline-block;
-      padding: 0 2em;
+      padding: 0 0 0 2em;
       .activeLink {
         text-decoration: none;
-        font-size: 0.8em;
         &:hover {
           color: c.$primary;
         }

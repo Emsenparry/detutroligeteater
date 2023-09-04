@@ -8,11 +8,10 @@ const Header = () => {
   return (
     <header className={styles.headerMain}>
       <img src={Logo} alt="logo" />
-      <div>
+      <div className={styles.col2}>
         <SearchBar />
-        <Navigation className={styles.navMain} />
+        <Navigation />
       </div>
-      
     </header>
   );
 };
