@@ -1,17 +1,17 @@
 @use '../../../Assets/Vars.scss' as c;
 
-ul {
-  list-style-type: none;
-  li {
-    margin-top: 4em;
-    padding: 0 1vw;
-    display: inline-block;
-    .activeLink {
-      text-decoration: none;
-      &:hover {
-        color: c.$primary;
+  ul {
+    list-style-type: none;
+    li {
+      display: inline-block;
+      padding: 0 2em;
+      .activeLink {
+        text-decoration: none;
+        font-size: 0.8em;
+        &:hover {
+          color: c.$primary;
+        }
       }
+      
     }
-    
   }
-}

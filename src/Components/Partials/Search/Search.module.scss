@@ -1,0 +1,21 @@
+@use '../../../Assets/Vars.scss' as c;
+
+.searchContainer {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid c.$tertiary;
+	width: 32%;
+}
+.searchInput {
+	border: none;
+	color: c.$tertiary;
+	outline: none;
+	background: transparent;
+}
+.searchButton {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.3vw 1vw;
+	color: c.$tertiary;
+}
