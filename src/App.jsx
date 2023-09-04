@@ -1,13 +1,14 @@
 import './App.scss';
 import AppRouter from './Components/App/AppRouter';
 import Header from './Components/Partials/Header/Header';
+import { ContainerStyle } from './Styled/Container.style.js';
 
 function App() {
   return (
-    <div>
+    <ContainerStyle maxwidth="1024">
       <Header />
       <AppRouter />
-    </div>
+    </ContainerStyle>
   );
 }
 

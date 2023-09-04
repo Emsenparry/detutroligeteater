@@ -10,7 +10,7 @@ const Navigation = () => {
           <NavLink
             to="/"
             style={({ isActive }) => ({
-              color: isActive ? "red" : "black",
+              color: isActive ? "#D39D5B" : "#30454C",
             })}
             className={styles.activeLink}
           >
@@ -21,7 +21,7 @@ const Navigation = () => {
           <NavLink
             to="/events"
             style={({ isActive }) => ({
-              color: isActive ? "red" : "black",
+              color: isActive ? "#D39D5B" : "#30454C",
             })}
             className={styles.activeLink}
           >
@@ -32,7 +32,7 @@ const Navigation = () => {
           <NavLink
             to="/actors"
             style={({ isActive }) => ({
-              color: isActive ? "red" : "black",
+              color: isActive ? "#D39D5B" : "#30454C",
             })}
             className={styles.activeLink}
           >
@@ -43,7 +43,7 @@ const Navigation = () => {
           <NavLink
             to="/login"
             style={({ isActive }) => ({
-              color: isActive ? "red" : "black",
+              color: isActive ? "#D39D5B" : "#30454C",
             })}
             className={styles.activeLink}
           >

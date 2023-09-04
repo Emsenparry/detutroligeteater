@@ -1,3 +1,5 @@
+@use '../../../Assets/Vars.scss' as c;
+
 ul {
   list-style-type: none;
   li {
@@ -7,7 +9,7 @@ ul {
     .activeLink {
       text-decoration: none;
       &:hover {
-        color: red;
+        color: c.$primary;
       }
     }
     

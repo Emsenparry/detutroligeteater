@@ -1,0 +1,10 @@
+.headerMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 11%;
+  background-color: #ccc;
+  img {
+    cursor: pointer;
+  }
+}
