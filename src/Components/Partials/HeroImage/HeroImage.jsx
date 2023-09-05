@@ -5,9 +5,16 @@ import styles from "./HeroImage.module.scss";
 const HeroImage = () => {
   const [HeroImage, setHeroImage] = useState([]);
 
-  const formatDate = (dateString) => {
+  const formatDate = (dateString, includeYear) => {
     const date = new Date(dateString);
-    return date.toDateString();
+    const options = {
+      month: "short",
+      day: "numeric",
+    };
+    if (includeYear) {
+      options.year = "numeric";
+    }
+    return date.toLocaleDateString("da-DK", options);
   };
 
   useEffect(() => {
@@ -33,7 +40,7 @@ const HeroImage = () => {
               <figcaption>
                 <p className={styles.stageName}>{item.stage.name}</p>
                 <p className={styles.date}>
-                  {formatDate(item.startdate)} - {formatDate(item.stopdate)}
+                  {formatDate(item.startdate, false)} - {formatDate(item.stopdate)}
                 </p>
                 <hr />
                 <h3>{item.title}</h3>
