@@ -1,54 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import styles from "./Navigation.module.scss";
+import "./Navigation.scss";
 
 const Navigation = () => {
   return (
     <nav>
       <ul>
         <li>
-          <NavLink
-            to="/"
-            style={({ isActive }) => ({
-              color: isActive ? "#D39D5B" : "#30454C",
-            })}
-            className={styles.activeLink}
-          >
-            FORSIDE
-          </NavLink>
+          <NavLink to="/">FORSIDE</NavLink>
         </li>
         <li>
-          <NavLink
-            to="/events"
-            style={({ isActive }) => ({
-              color: isActive ? "#D39D5B" : "#30454C",
-            })}
-            className={styles.activeLink}
-          >
-            FORESTILLINGER & EVENTS
-          </NavLink>
+          <NavLink to="/events">FORESTILLINGER & EVENTS</NavLink>
         </li>
         <li>
-          <NavLink
-            to="/actors"
-            style={({ isActive }) => ({
-              color: isActive ? "#D39D5B" : "#30454C",
-            })}
-            className={styles.activeLink}
-          >
-            SKUESPILLERE
-          </NavLink>
+          <NavLink to="/actors">SKUESPILLERE</NavLink>
         </li>
         <li>
-          <NavLink
-            to="/login"
-            style={({ isActive }) => ({
-              color: isActive ? "#D39D5B" : "#30454C",
-            })}
-            className={styles.activeLink}
-          >
-            LOGIN
-          </NavLink>
+          <NavLink to="/login">LOGIN</NavLink>
         </li>
       </ul>
     </nav>

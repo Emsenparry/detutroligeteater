@@ -1,0 +1,20 @@
+@use "../../../Assets/Vars.scss" as c;
+
+ul {
+  list-style-type: none;
+  li {
+    display: inline-block;
+    padding: 0 0 0 2em;
+    a {
+      font-size: 1.2em;
+      text-decoration: none;
+      color: c.$tertiary;
+      &.active {
+        color: c.$primary;
+      }
+      &:hover {
+        color: c.$primary;
+      }
+    }
+  }
+}

@@ -35,7 +35,7 @@ const HeroImage = () => {
                 {formatDate(item.startdate)} - {formatDate(item.stopdate)}
                 </p>
               </figcaption>
-            <img src={item.iamge} alt="heroimage" />
+            <img src={require(`../../../Assets/Images/events/medium/${item.image}`)} alt="heroimage" />
             </figure>
           );
         })}
