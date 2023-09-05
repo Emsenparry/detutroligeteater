@@ -6,7 +6,7 @@ import { ContainerStyle } from "./Styled/Container.Style.js";
 
 function App() {
   return (
-    <ContainerStyle maxwidth="1200">
+    <ContainerStyle maxwidth="1100">
       <Header />
       <AppRouter />
       <Footer />

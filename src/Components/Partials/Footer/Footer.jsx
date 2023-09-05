@@ -19,7 +19,7 @@ const Footer = () => {
           <span>Find vej på kort</span>
         </p>
       </div>
-      <div className='col-1'>
+      <div>
                 <div>
                     <h3>BILLETSERVICE</h3>
                     <p>Se åbningstider</p>
