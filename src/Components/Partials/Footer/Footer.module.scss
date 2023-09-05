@@ -1,0 +1,41 @@
+@use "../../../Assets/Vars.scss" as c;
+
+footer {
+  display: grid;
+  grid-template-columns: auto auto auto 15%;
+  width: 100%;
+  background-color: c.$tertiary;
+  padding-bottom: 10vh;
+  margin-top: 8vh;
+  h3 {
+    color: white;
+    padding: 1em 0 0.5em 3em;
+  }
+  p {
+    padding-left: 3.5em;
+    color: white;
+    font-weight: 300;
+  }
+  .Pspan{
+    padding-top: 3vh;
+}
+  .footerIcons {
+    display: flex;
+    gap: 0 1em;
+    padding-top: 1.5em;
+  }
+}
+
+// MEDIA QUERIES
+@media screen and (max-width: 768px) {
+  footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    h3, p {
+      padding: 0.5em;
+    }
+    .footerIcons {
+    justify-content: center;
+    }
+  }
+}
