@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import styles from "./HeroImage.module.scss";
 
 const HeroImage = () => {
   const [HeroImage, setHeroImage] = useState([]);
@@ -24,18 +25,24 @@ const HeroImage = () => {
   }, [setHeroImage]);
 
   return (
-    <article>
+    <article className={styles.showCase}>
       {HeroImage &&
         HeroImage.map((item) => {
           return (
             <figure key={item.id}>
               <figcaption>
-                <p>{item.stage.name}</p>
-                <p>
-                {formatDate(item.startdate)} - {formatDate(item.stopdate)}
+                <p className={styles.stageName}>{item.stage.name}</p>
+                <p className={styles.date}>
+                  {formatDate(item.startdate)} - {formatDate(item.stopdate)}
                 </p>
+                <hr />
+                <h3>{item.title}</h3>
+                <p className={styles.genre}>{item.genre.name}</p>
               </figcaption>
-            <img src={require(`../../../Assets/Images/events/medium/${item.image}`)} alt="heroimage" />
+              <img
+                src={require(`../../../Assets/Images/events/medium/${item.image}`)}
+                alt="heroimage"
+              />
             </figure>
           );
         })}

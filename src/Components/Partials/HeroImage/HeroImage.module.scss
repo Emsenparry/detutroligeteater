@@ -1,0 +1,43 @@
+@use "../../../Assets/Vars.scss" as c;
+
+.showCase {
+  border: 2px solid c.$secondary;
+  figure {
+    display: grid;
+    grid-template-columns: 30% 75%;
+    figcaption {
+      text-align: right;
+      margin-right: 2em;
+      margin-top: auto;
+      color: c.$tertiary;
+      h3 {
+        color: c.$primary;
+        font-family: c.$fontPlayfair;
+        font-size: 3em;
+      }
+      .stageName {
+        text-transform: uppercase;
+        font-size: 1.2em;
+      }
+      .date {
+        text-transform: uppercase;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-left: 1em;
+      }
+      hr {
+        width: 90%;
+        margin-left: auto;
+      }
+      .genre{
+        text-transform: uppercase;
+      }
+    }
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 400px;
+      border: 10px solid c.$secondary;
+    }
+  }
+}
