@@ -2,9 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styles from "./Events.module.scss";
 import { Link } from "react-router-dom";
+import Filter from "../../../Partials/Filter/Filter";
 
 const EventList = () => {
   const [eventList, setEventList] = useState([]);
+  const [sortingOrder, setSortingOrder] = useState("");
 
   const formatDate = (dateString, includeYear) => {
     const date = new Date(dateString);
@@ -18,11 +20,15 @@ const EventList = () => {
     return date.toLocaleDateString("da-DK", options);
   };
 
+  const handleSortingOrderChange = (newSortingOrder) => {
+    setSortingOrder(newSortingOrder);
+  };
+
   useEffect(() => {
     const getData = async () => {
       try {
         const result = await axios.get(
-          `http://localhost:4000/events?orderby=duration_minutes&attributes=id,title,image%2Cstartdate%2Cstopdate` 
+          `http://localhost:4000/events?&dir=${sortingOrder}&attributes=id,title,image%2Cstartdate%2Cstopdate`
         );
         setEventList(result.data);
       } catch (err) {
@@ -30,11 +36,16 @@ const EventList = () => {
       }
     };
     getData();
-  }, [setEventList]);
+  }, [setEventList, sortingOrder]);
 
   return (
-  <>
-      {eventList && eventList.map((item) => {
+    <>
+      <Filter
+        sortingOrder={sortingOrder}
+        onSortingOrderChange={handleSortingOrderChange}
+      />
+      {eventList &&
+        eventList.map((item) => {
           return (
             <div className={styles.eventList} key={item.id}>
               <figure>
