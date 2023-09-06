@@ -1,8 +1,11 @@
 import React from 'react'
+import { Layout } from '../../Layout/Layout'
 
 const Actors = () => {
   return (
-    <div>Actors</div>
+    <Layout title="Skuespillere">
+
+    </Layout>
   )
 }
 

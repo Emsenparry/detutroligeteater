@@ -1,0 +1,49 @@
+@use '../../../../Assets/Vars.scss' as c;
+
+.eventList{
+    display: grid;
+    grid-template-columns: 15% 20% 20% 43%;
+    border: 2px solid c.$primary;
+    align-items: center;
+    margin: 1.3vh 0;
+    color: c.$tertiary;
+    img {
+      max-width: 80%;
+      height: 100px;
+      float: left;
+      border: 5px solid c.$primary;
+    }
+    h3 {
+      color: c.$primary;
+      font-family: c.$fontPlayfair;
+      font-size: 2em;
+      margin-right: 1em;
+    }
+    .textBox{
+      border-left: 1px solid c.$tertiary;
+      p{
+        margin-left: 1em;
+      }
+      .date{
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+    }
+    button {
+      margin: 0.5em;
+      padding: 1em;
+      color: white;
+      background-color: c.$tertiary;
+      border: none;
+      float: right;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+    .buy {
+      color: white;
+      background-color: c.$primary;
+    }
+  }
+  

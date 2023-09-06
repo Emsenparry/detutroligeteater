@@ -48,7 +48,7 @@ const HomeEvents = () => {
                     <p className={styles.stageName}>{item.stage.name}</p>
                     <p className={styles.date}>
                       {formatDate(item.startdate, false)} -{" "}
-                      {formatDate(item.stopdate)}
+                      {formatDate(item.stopdate, true)}
                     </p>
                     <hr />
                     <h3>{item.title}</h3>

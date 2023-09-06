@@ -40,7 +40,7 @@ const HeroImage = () => {
               <figcaption>
                 <p className={styles.stageName}>{item.stage.name}</p>
                 <p className={styles.date}>
-                  {formatDate(item.startdate, false)} - {formatDate(item.stopdate)}
+                  {formatDate(item.startdate, false)} - {formatDate(item.stopdate, true)}
                 </p>
                 <hr />
                 <h3>{item.title}</h3>
