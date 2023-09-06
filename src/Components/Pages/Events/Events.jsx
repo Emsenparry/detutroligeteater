@@ -8,7 +8,6 @@ const Events = () => {
     <Layout title="Forestillinger & events">
         <HeroImage />
         <EventList />
-
     </Layout>
   )
 }

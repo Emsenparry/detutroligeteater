@@ -8,7 +8,9 @@
   padding-bottom: 3vh;
   figure {
     border: 2px solid c.$secondary;
+    display: grid;
     figcaption {
+      margin-top: auto;
       text-align: right;
       margin-right: 1em;
       color: c.$tertiary;
