@@ -1,5 +1,21 @@
 @use '../../../../Assets/Vars.scss' as c;
 
+
+// Filter & h2 title
+.view{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5em 0;
+  h2{
+    font-family: c.$fontPlayfair;
+    font-size: 3.5em;
+    color: c.$primary;
+  }
+}
+
+
+// Event List
 .eventList{
     display: grid;
     grid-template-columns: 15% 20% 20% 43%;

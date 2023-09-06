@@ -22,7 +22,7 @@ const HomeEvents = () => {
     const getData = async () => {
       try {
         const result = await axios.get(
-          `http://localhost:4000/events?orderby=duration_minutes&limit=3&attributes=id,title,image%2Cstartdate%2Cstopdate`
+          `http://localhost:4000/events/?orderby=duration_minutes&limit=3&attributes=id,title,image%2Cstartdate%2Cstopdate`
         );
         setData(result.data);
       } catch (err) {
@@ -54,7 +54,7 @@ const HomeEvents = () => {
                     <h3>{item.title}</h3>
                     <p className={styles.genre}>{item.genre.name}</p>
 
-                    <div>
+                    <div className={styles.btnContainer}>
                       <button>
                         <Link to={`/events/${item.id}`}>LÆS MERE</Link>
                       </button>

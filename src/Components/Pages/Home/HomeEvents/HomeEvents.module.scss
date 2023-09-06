@@ -15,6 +15,8 @@
       text-align: right;
       margin-right: 1em;
       color: c.$tertiary;
+      display: flex; 
+      flex-direction: column;
       hr {
         width: 70%;
         margin-left: auto;
@@ -38,6 +40,7 @@
       }
 
       h3 {
+        margin-bottom: auto;
         color: c.$primary;
         font-family: c.$fontPlayfair;
         font-size: 2.5em;
@@ -55,6 +58,7 @@
           font-weight: bold;
           text-decoration: none;
         }
+        
       }
       .buyBTN {
         color: white;

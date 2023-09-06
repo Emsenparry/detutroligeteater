@@ -1,4 +1,6 @@
 import React from "react";
+import './Filter.scss';
+
 
 const Filter = ({ sortingOrder, onSortingOrderChange }) => {
   const handleSortChange = (e) => {
@@ -16,8 +18,8 @@ const Filter = ({ sortingOrder, onSortingOrderChange }) => {
         <option value="" hidden>
           Filter
         </option>
-        <option value="ASC">Ascending</option>
-        <option value="DESC">Descending</option>
+        <option value="ASC">Sorter efter titel (faldende)</option>
+        <option value="DESC">Sorter efter titel (stigende)</option>
       </select>
     </div>
   );

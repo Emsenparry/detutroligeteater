@@ -1,0 +1,10 @@
+@use '../../../Assets/Vars.scss' as c;
+
+select#sortingOrder {
+  padding: 5px;
+  font-size: 1.1em;
+  border: 1px solid c.$primary;
+  border-radius: 5px;
+  background-color: #fff;
+  color: c.$tertiary;
+}

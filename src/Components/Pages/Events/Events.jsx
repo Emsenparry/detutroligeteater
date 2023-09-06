@@ -7,7 +7,6 @@ const Events = () => {
   return (
     <Layout title="Forestillinger & events">
         <HeroImage />
-        <h2>Oversigt</h2>
         <EventList />
 
     </Layout>

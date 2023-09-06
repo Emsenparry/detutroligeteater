@@ -40,10 +40,14 @@ const EventList = () => {
 
   return (
     <>
+    <div className={styles.view}>
       <Filter
         sortingOrder={sortingOrder}
         onSortingOrderChange={handleSortingOrderChange}
       />
+      <h2>Oversigt</h2>
+    </div>
+      
       {eventList &&
         eventList.map((item) => {
           return (
