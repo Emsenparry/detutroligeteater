@@ -53,15 +53,12 @@ const HomeEvents = () => {
                     <hr />
                     <h3>{item.title}</h3>
                     <p className={styles.genre}>{item.genre.name}</p>
-
-                    <div className={styles.btnContainer}>
-                      <button>
-                        <Link to={`/events/${item.id}`}>LÆS MERE</Link>
-                      </button>
-                      <button className={styles.buyBTN}>
-                        <Link to={`/events/${item.id}`}>KØB BILLET</Link>
-                      </button>
-                    </div>
+                    <button>
+                      <Link to={`/events/${item.id}`}>LÆS MERE</Link>
+                    </button>
+                    <button className={styles.buyBTN}>
+                      <Link to={`/events/${item.id}`}>KØB BILLET</Link>
+                    </button>
                   </figcaption>
                 </figure>
               </>
