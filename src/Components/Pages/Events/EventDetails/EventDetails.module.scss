@@ -12,61 +12,64 @@
     .grid {
       display: grid;
       grid-template-columns: auto auto;
-      .eventDates{
-        p{
-            text-transform: uppercase;
+      .eventDates {
+        p {
+          text-transform: uppercase;
         }
-        .stageName{
-            font-weight: 600;
-            font-size: 1.3em;
+        .stageName {
+          font-weight: 600;
+          font-size: 1.3em;
         }
-        .date{
-            font-size: 1.5em;
+        .date {
+          font-size: 1.5em;
         }
       }
-        h2 {
-          font-weight: 600;
-          text-align: right;
-          padding-right: 1em;
-        }
-      }    
+      h2 {
+        font-weight: 600;
+        text-align: right;
+        padding-right: 1em;
+      }
     }
     .buyBtn {
-        display: flex;
-        justify-content: space-between;
-        h3 {
-            color: c.$primary;
-            font-family: c.$fontPlayfair;
-            font-size: 3em;
-            font-weight: 100;
-          }
-          button {
-            margin-right: 1.5em;
-            margin-top: 1em;
-            padding: 0.5em 1em;
-            color: white;
-            background-color: c.$primary;
-            border: none;
-            font-size: 1.2em;
-            font-weight: bold;
-          }
+      display: flex;
+      justify-content: space-between;
+      h3 {
+        color: c.$primary;
+        font-family: c.$fontPlayfair;
+        font-size: 3em;
+        font-weight: 100;
+      }
+      button {
+        margin-right: 1em;
+        margin-top: 1em;
+        padding: 0.5em 1em;
+        color: white;
+        background-color: c.$primary;
+        border: none;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
     }
-    .genre{
-        font-size: 1.5em;
-        margin-bottom: 0.5em;
+    .genre {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
     }
     .description {
-        color: c.$primary;
-        white-space: pre-wrap;
-      }
-    .minutes{
-        font-size: 1.2em;
-        color: c.$primary;
-       margin: 0.5em 0;
+      color: c.$primary;
+      white-space: pre-wrap;
+    }
+    .minutes {
+      font-size: 1.2em;
+      color: c.$primary;
+      margin: 0.5em 0;
     }
     h4 {
-        text-transform: uppercase;
-        font-weight: 300;
-        font-size: 2em;
-      }
-     }
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 2em;
+    }
+  }
+
+  // ACTORS SCSS
+  
+}
