@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styles from './EventDetails.module.scss';
 
 const EventDetails = () => {
@@ -72,7 +72,8 @@ const EventDetails = () => {
                <h3>{data.title}</h3> 
               </div>
               <div>
-              <button className={styles.buy}>KØB BILLET</button>
+              <button className={styles.buy}>
+              <Link to={`/buy`}>KØB BILLET</Link></button>
               </div>
             </div>
 

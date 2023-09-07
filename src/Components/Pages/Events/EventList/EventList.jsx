@@ -67,7 +67,8 @@ const EventList = () => {
                 </p>
               </div>
               <div>
-                <button className={styles.buy}>KØB BILLET</button>
+                <button className={styles.buy}>
+                <Link to={`/buy`}>KØB BILLET</Link></button>
                 <button className={styles.readMore}>
                   <Link to={`/events/${item.id}`}>LÆS MERE</Link>
                 </button>

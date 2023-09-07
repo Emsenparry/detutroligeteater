@@ -60,7 +60,7 @@ const HomeEvents = () => {
                         <Link to={`/events/${item.id}`}>LÆS MERE</Link>
                       </button>
                       <button className={styles.buyBTN}>
-                        <Link to={`/events/${item.id}`}>KØB BILLET</Link>
+                        <Link to={`/buy`}>KØB BILLET</Link>
                       </button>
                     </div>
                   </figcaption>

@@ -6,11 +6,14 @@ import Actors from "../Pages/Actors/Actors";
 import Login from "../Pages/Login/Login";
 import NotFound from "../Pages/NotFound/NotFound";
 import EventDetails from "../Pages/Events/EventDetails/EventDetails";
+import BuyPage from '../Pages/BuyPage/BuyPage';
+
 
 const AppRouter = () => {
   return (
     <Routes>
       <Route index element={<Home />} />
+      <Route path="/buy" element={<BuyPage />} />
       <Route path="/events">
         <Route index element={<Events />} />
         <Route path=":event_id" element={<EventDetails />} />
