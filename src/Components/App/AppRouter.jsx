@@ -15,7 +15,12 @@ const AppRouter = () => {
         <Route index element={<Events />} />
         <Route path=":event_id" element={<EventDetails />} />
       </Route>
-      <Route path="/actors" element={<Actors />} />
+
+      <Route path="/actors">
+        <Route index element={<Actors />} />
+        {/* <Route path="/actors" element={<Actors />} /> */}
+      </Route>
+    
       <Route path="/login" element={<Login />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

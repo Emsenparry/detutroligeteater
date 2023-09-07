@@ -1,0 +1,56 @@
+@use "../../../../Assets/Vars.scss" as c;
+
+.actorList {
+  border: 2px solid c.$primary;
+  h2{
+    font-size: 3em;
+    font-weight: 200;
+    font-family: c.$fontPlayfair;
+    color: c.$primary;
+    margin: 0.6em;
+  }
+  .grid {
+    margin: 2em;
+    display: grid;
+    grid-template-columns: 20% 65% 20%;
+    img {
+      max-width: 100%;
+    }
+    figcaption {
+      margin-left: 1em;
+    }
+    h3 {
+      color: c.$tertiary;
+      text-transform: uppercase;
+      margin-bottom: 0.5em;
+      font-weight: 400;
+      font-size: 1.5em;
+    }
+    p {
+      color: c.$primary;
+      font-weight: 600;
+      font-size: 1.2em;
+    }
+    .readContainer {
+      position: relative;
+      button {
+        position: absolute;
+        bottom: 0;
+        left: 50px;
+        margin: 0.5em;
+        padding: 1em;
+        color: white;
+        background-color: c.$tertiary;
+        border: none;
+        a {
+          color: white;
+          font-weight: 600;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  hr {
+    margin: 2em;
+  }
+}

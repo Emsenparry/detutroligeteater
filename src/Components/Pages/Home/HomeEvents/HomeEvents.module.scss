@@ -9,16 +9,18 @@
   figure {
     border: 2px solid c.$secondary;
     display: grid;
+    grid-template-rows: auto 1fr;
     figcaption {
-      margin-top: auto;
       text-align: right;
       margin-right: 1em;
       color: c.$tertiary;
-      .stageName{
+      display: grid;
+      grid-template-rows: min-content 1fr auto;
+      .stageName {
         margin-top: 1em;
         text-transform: uppercase;
       }
-      .date{
+      .date {
         font-size: 1.3em;
         font-weight: bold;
         text-transform: uppercase;
@@ -34,8 +36,7 @@
         font-size: 2.5em;
         font-weight: 300;
       }
-      .genre{
-        margin-top: auto;
+      .genre {
         font-size: 2em;
       }
     }
@@ -45,27 +46,25 @@
       height: 350px;
       border: 10px solid c.$secondary;
     }
-      button {
-        padding: 1em;
-        margin: 0.5em 0 2em 1em;
+    button {
+      padding: 1em;
+      margin: 0.5em 0 2em 1em;
+      color: white;
+      background-color: c.$tertiary;
+      border: none;
+      width: 35%;
+      a {
         color: white;
-        background-color: c.$tertiary;
-        border: none;
-        width: 35%;
-        a {
-          color: white;
-          font-weight: bold;
-          text-decoration: none;
-        }
-        
-      }
-      .buyBTN {
-        color: white;
-        background-color: c.$primary;
+        font-weight: bold;
+        text-decoration: none;
       }
     }
+    .buyBTN {
+      color: white;
+      background-color: c.$primary;
+    }
   }
-
+}
 
 .eventsBTN {
   text-align: right;

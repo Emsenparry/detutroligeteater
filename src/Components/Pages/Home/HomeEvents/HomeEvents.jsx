@@ -45,20 +45,24 @@ const HomeEvents = () => {
                     alt="events"
                   />
                   <figcaption>
-                    <p className={styles.stageName}>{item.stage.name}</p>
-                    <p className={styles.date}>
-                      {formatDate(item.startdate, false)} -{" "}
-                      {formatDate(item.stopdate, true)}
-                    </p>
-                    <hr />
+                    <div className={styles.top}>
+                      <p className={styles.stageName}>{item.stage.name}</p>
+                      <p className={styles.date}>
+                        {formatDate(item.startdate, false)} -{" "}
+                        {formatDate(item.stopdate, true)}
+                      </p>
+                      <hr />
+                    </div>
                     <h3>{item.title}</h3>
-                    <p className={styles.genre}>{item.genre.name}</p>
-                    <button>
-                      <Link to={`/events/${item.id}`}>LÆS MERE</Link>
-                    </button>
-                    <button className={styles.buyBTN}>
-                      <Link to={`/events/${item.id}`}>KØB BILLET</Link>
-                    </button>
+                    <div className={styles.bottom}>
+                      <p className={styles.genre}>{item.genre.name}</p>
+                      <button>
+                        <Link to={`/events/${item.id}`}>LÆS MERE</Link>
+                      </button>
+                      <button className={styles.buyBTN}>
+                        <Link to={`/events/${item.id}`}>KØB BILLET</Link>
+                      </button>
+                    </div>
                   </figcaption>
                 </figure>
               </>
