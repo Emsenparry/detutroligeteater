@@ -1,8 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navigation.scss";
+import { useAuth } from "../../Providers/AuthProvider";
 
 const Navigation = () => {
+
+  const { loginData } = useAuth();
+
+  
   return (
     <nav>
       <ul>
@@ -16,7 +21,11 @@ const Navigation = () => {
           <NavLink to="/actors">SKUESPILLERE</NavLink>
         </li>
         <li>
-          <NavLink to="/login">LOGIN</NavLink>
+        {loginData ? (
+            <NavLink to="/login">MIN SIDE</NavLink>
+          ) : (
+            <NavLink to="/login">LOGIN</NavLink>
+          )}
         </li>
       </ul>
     </nav>
