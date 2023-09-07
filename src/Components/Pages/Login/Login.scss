@@ -9,8 +9,10 @@
         border: solid 1px c.$tertiary;
         border-radius: 1em;
         box-shadow: 3px 3px 1px 0px rgba(0, 0, 0, 0.75);
+        &::placeholder{
+            padding-left: 1em;
+        }
     }
-  
     button {
         width: 10%;
         color: white;
