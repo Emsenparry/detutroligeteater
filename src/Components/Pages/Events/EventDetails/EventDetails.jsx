@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import styles from './EventDetails.module.scss';
 
 const EventDetails = () => {
   const [data, setData] = useState({});
-  const [actorData, setActorData] = useState([]); // State to store actor data
+  const [actorData, setActorData] = useState([]);
   const { event_id } = useParams();
 
   const formatDate = (dateString, includeYear) => {
@@ -39,7 +40,7 @@ const EventDetails = () => {
   }, [event_id]);
 
   return (
-    <section>
+    <section className={styles.eventDetails}>
       {data ? (
         <>
           <div>
@@ -50,35 +51,46 @@ const EventDetails = () => {
               />
             )}
           </div>
-          <article>
-            <div>
-              <div>
-                {data.stage ? <p>{data.stage.name}</p> : null}
-                <p>
+          <article className={styles.eventInfo}>
+            <div className={styles.grid}>
+              <div className={styles.eventDates}>
+                {data.stage ? <p className={styles.stageName}>{data.stage.name}</p> : null}
+                <p className={styles.date}>
                   {formatDate(data.startdate, false)} -{" "}
                   {formatDate(data.stopdate, true)}
                 </p>
               </div>
-              <div>
+
+              <div className={styles.price}>
                 <h2>BILLETPRIS: {data.price} DKK</h2>
               </div>
             </div>
-            <div>
-              <hr />
-              <h3>{data.title}</h3>
-              {data.genre ? <p>{data.genre.name}</p> : null}
+            <hr />
+
+            <div className={styles.buyBtn}>
+              <div>
+               <h3>{data.title}</h3> 
+              </div>
+              <div>
+              <button className={styles.buy}>KØB BILLET</button>
+              </div>
             </div>
+
+            {data.genre ? <p className={styles.genre}>{data.genre.name}</p> : null}
             <div>
-              <p>{data.description}</p>
-              <p>Varighed ca. {data.duration_minutes} minutter</p>
+              <p className={styles.description}>{data.description}</p>
+              <p className={styles.minutes}>Varighed ca. {data.duration_minutes} minutter</p>
             </div>
+
             <span>
               <h4>Medvirkende</h4>
             </span>
           </article>
-          <section>
+
+          {/* ACTORS */}
+          {/* <section className={styles.actors} >
             {actorData.map((actor) => (
-              <article key={actor.id}>
+              <article className={styles.gridTwo} key={actor.id}>
                 <figure>
                   {actor.image && (
                     <img
@@ -90,7 +102,7 @@ const EventDetails = () => {
                 <h4>{actor.name}</h4>
               </article>
             ))}
-          </section>
+          </section> */}
         </>
       ) : null}
     </section>
