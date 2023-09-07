@@ -88,21 +88,21 @@ const EventDetails = () => {
           </article>
 
           {/* ACTORS */}
-          {/* <section className={styles.actors} >
-            {actorData.map((actor) => (
-              <article className={styles.gridTwo} key={actor.id}>
+          <section className={styles.actors} >
+            {actorData.slice(0, 5).map((actor) => (
+              <article className={styles.border} key={actor.id}>
                 <figure>
                   {actor.image && (
                     <img
                       src={require(`../../../../Assets/Images/actors/${actor.image}`)}
-                      alt=""
+                      alt="imagesofactors"
                     />
                   )}
                 </figure>
                 <h4>{actor.name}</h4>
               </article>
             ))}
-          </section> */}
+          </section>
         </>
       ) : null}
     </section>
