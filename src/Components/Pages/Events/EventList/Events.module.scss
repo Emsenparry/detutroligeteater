@@ -38,9 +38,11 @@
     .textBox{
       border-left: 1px solid c.$tertiary;
       p{
+        text-transform: uppercase;
         margin-left: 1em;
       }
       .date{
+        text-transform: uppercase;
         font-weight: bold;
         font-size: 1.1em;
       }
