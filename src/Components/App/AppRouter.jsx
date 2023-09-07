@@ -7,6 +7,7 @@ import Login from "../Pages/Login/Login";
 import NotFound from "../Pages/NotFound/NotFound";
 import EventDetails from "../Pages/Events/EventDetails/EventDetails";
 import BuyPage from '../Pages/BuyPage/BuyPage';
+import ActorDetails from "../Pages/Actors/ActorDetails/ActorDetails";
 
 
 const AppRouter = () => {
@@ -21,7 +22,7 @@ const AppRouter = () => {
 
       <Route path="/actors">
         <Route index element={<Actors />} />
-        {/* <Route path="/actors" element={<Actors />} /> */}
+        <Route path="/actors/:actor_id" element={<ActorDetails />} />
       </Route>
     
       <Route path="/login" element={<Login />} />

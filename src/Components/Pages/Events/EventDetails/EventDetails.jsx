@@ -47,7 +47,7 @@ const EventDetails = () => {
             {data.image && (
               <img
                 src={require(`../../../../Assets/Images/events/large/${data.image}`)}
-                alt=""
+                alt="imageofevent"
               />
             )}
           </div>
