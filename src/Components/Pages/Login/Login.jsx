@@ -3,6 +3,7 @@ import { useAuth } from "../../Providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import React from "react";
 import './Login.scss';
+import { Layout } from "../../Layout/Layout";
 
 const Login = () => {
   const {
@@ -45,6 +46,7 @@ const Login = () => {
 
   return (
     <>
+    <Layout title="Login">
       {!loginData ? (
         <form method="POST" onSubmit={handleSubmit(submitHandle)} className="loginForm">
           <div className="formGroup">
@@ -71,11 +73,14 @@ const Login = () => {
           </div>
         </form>
       ) : (
+        <Layout title="Min side">
         <div className="logOutContainer">
             <p>Du er logget på som: </p>
             <button onClick={() => Logout()} className="logOutBtn">Log ud</button>
         </div>
+        </Layout>
       )}
+      </Layout>
     </>
   );
 };
