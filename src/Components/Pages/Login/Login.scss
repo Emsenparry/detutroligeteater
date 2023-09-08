@@ -1,27 +1,52 @@
-@use '../../../Assets/Vars.scss' as c;
+@use "../../../Assets/Vars.scss" as c;
 
 .loginForm {
-    input {
-        padding: 1em 0;
-        margin: 1em 0;
-        width: 30%;
-        color: c.$tertiary;
-        border: solid 1px c.$tertiary;
-        border-radius: 1em;
-        box-shadow: 3px 3px 1px 0px rgba(0, 0, 0, 0.75);
-        &::placeholder{
-            padding-left: 1em;
-        }
-    }
-    button {
-        width: 10%;
-        color: white;
-        background-color: c.$secondary;
-        padding: 0.5em;
-        border: 1px solid c.$primary;
-        border-radius: 0.5em;
-        margin: 1em;
-        margin-left: 0;
-        font-size: 1.2em;
+  input {
+    padding: 1em 0;
+    margin: 1em 0;
+    width: 30%;
+    color: c.$tertiary;
+    border: solid 1px c.$tertiary;
+    border-radius: 1em;
+    box-shadow: 3px 3px 1px 0px rgba(0, 0, 0, 0.75);
+  }
+  input[type="text"],
+  input[type="password"] {
+    padding-left: 1em;
+  }
+  button {
+    cursor: pointer;
+    width: 10%;
+    color: white;
+    background-color: c.$secondary;
+    padding: 0.5em;
+    border: 1px solid c.$primary;
+    border-radius: 0.5em;
+    margin: 1em;
+    margin-left: 0;
+    font-size: 1.2em;
+    &:hover {
+      background-color: #926540;
     }
   }
+  .error {
+    color: red;
+    font-size: 1em;
+  }
+}
+
+.logOutBtn {
+  cursor: pointer;
+  width: 10%;
+  color: white;
+  background-color: c.$secondary;
+  padding: 0.5em;
+  border: 1px solid c.$primary;
+  border-radius: 0.5em;
+  margin: 1em;
+  margin-left: 0;
+  font-size: 1.2em;
+  &:hover {
+    background-color: #926540;
+  }
+}

@@ -8,13 +8,13 @@ const Login = () => {
   const {
     register,
     handleSubmit,
+    reset, 
     formState: { errors } 
   } = useForm();
   const { loginData, setLoginData } = useAuth();
 
 
   const submitHandle = async (e) => {
-    console.log(e);
     const formData = new URLSearchParams();
     formData.append("username", e.username);
     formData.append("password", e.password);
@@ -35,9 +35,12 @@ const Login = () => {
     }
   };
 
+  
+
   const Logout = () => {
     sessionStorage.removeItem("token");
     setLoginData("");
+    reset();
   };
 
   return (
@@ -50,7 +53,7 @@ const Login = () => {
               placeholder="Brugernavn"
               {...register("username", { required: true })}
             />
-            {errors.username && <span>Indtast dit brugernavn!</span>}
+            {errors.username && <p className="error">Indtast dit brugernavn!</p>}
           </div>
           <div>
             <input
@@ -58,7 +61,7 @@ const Login = () => {
               placeholder="Adgangskode"
               {...register("password", { required: true })}
             />
-            {errors.password && <span className="error">Indtast din adgangskode!</span>}
+            {errors.password && <p className="error">Indtast din adgangskode!</p>}
           </div>
 
           <div>
@@ -69,9 +72,9 @@ const Login = () => {
           </div>
         </form>
       ) : (
-        <div>
-            <p>Du er logget på som: {loginData.username}</p>
-            <button onClick={() => Logout()}>Log ud</button>
+        <div className="logOutContainer">
+            <p>Du er logget på som: </p>
+            <button onClick={() => Logout()} className="logOutBtn">Log ud</button>
         </div>
       )}
     </>
