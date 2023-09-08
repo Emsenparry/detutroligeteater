@@ -28,7 +28,7 @@ const EventList = () => {
     const getData = async () => {
       try {
         const result = await axios.get(
-          `http://localhost:4000/events?&dir=${sortingOrder}&attributes=id,title,image%2Cstartdate%2Cstopdate`
+          `http://localhost:4000/events?&dir=${sortingOrder}&attributes=id,title,image, price%2Cstartdate%2Cstopdate`
         );
         setEventList(result.data);
       } catch (err) {

@@ -68,7 +68,6 @@ const Login = () => {
             <button type="submit">
               Login
             </button>
-            <button type="reset">Anuller</button>
           </div>
         </form>
       ) : (
