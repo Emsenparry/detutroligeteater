@@ -14,7 +14,6 @@ const Login = () => {
   } = useForm();
   const { loginData, setLoginData } = useAuth();
 
-
   const submitHandle = async (e) => {
     const formData = new URLSearchParams();
     formData.append("username", e.username);
@@ -29,13 +28,25 @@ const Login = () => {
     }
   };
 
-  const handleSessionData = (data) => {
+  const getUserData = async user_id => {
+    const url = `http://localhost:4000/users/${user_id}`
+    const result = await axios.get(url)
+    return result
+    // console.log(result);
+  }
+
+  const handleSessionData = async data => {
     if (data) {
+      const user = await getUserData(data.user_id)
+      console.log(user);
+      data.user = `${user.data.firstname} ${user.data.lastname}`
       sessionStorage.setItem("token", JSON.stringify(data));
       setLoginData(data);
+    
     }
   };
 
+  
   
 
   const Logout = () => {
@@ -75,7 +86,7 @@ const Login = () => {
       ) : (
         <Layout title="Min side">
         <div className="logOutContainer">
-            <p>Du er logget på som: </p>
+            <p>Du er logget på som: {loginData.user}</p>
             <button onClick={() => Logout()} className="logOutBtn">Log ud</button>
         </div>
         </Layout>

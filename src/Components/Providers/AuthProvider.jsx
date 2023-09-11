@@ -8,7 +8,7 @@ const AuthProvider = ({children}) => {
     useEffect(() => {
         if(sessionStorage.getItem('token')) {
             // Når vi henter ud er det JSON.parse
-            setLoginData(JSON.parse(sessionStorage.getItem('token')))
+            setLoginData(JSON.parse(sessionStorage.getItem('token'))) 
         }
         // Hvis nogen af vores children ændre sig, så skal den re-render den provider.
     }, [children])
