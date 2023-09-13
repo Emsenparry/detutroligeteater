@@ -29,8 +29,18 @@ const Login = () => {
     }
   };
 
+  const getUserData = async (user_id) => {
+    const url = `http://localhost:4000/users/${user_id}`;
+    const result = await axios.get(url);
+    return result;
+    // console.log(result);
+  };
+
   const handleSessionData = async (data) => {
     if (data) {
+      const user = await getUserData(data.user_id);
+      console.log(user);
+      data.user = `${user.data.firstname} ${user.data.lastname}`;
       sessionStorage.setItem("token", JSON.stringify(data));
       setLoginData(data);
     }
@@ -77,9 +87,9 @@ const Login = () => {
             </div>
           </form>
         ) : (
-          <Layout title="Min Side">
+          <Layout>
             <div className="logOutContainer">
-              <p>{`Du er logget på som: ${loginData.user.firstname} ${loginData.user.lastname}`}</p>
+              <p>Du er logget på som: {loginData.user}</p>
               <button onClick={() => Logout()} className="logOutBtn">
                 Log ud
               </button>

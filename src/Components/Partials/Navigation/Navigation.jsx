@@ -6,7 +6,6 @@ import { useAuth } from "../../Providers/AuthProvider";
 const Navigation = () => {
 
   const { loginData } = useAuth();
-
   
   return (
     <nav>
