@@ -22,7 +22,7 @@ const AppRouter = () => {
 
       <Route path="/actors">
         <Route index element={<Actors />} />
-        <Route path="/actors/:actor_id" element={<ActorDetails />} />
+        <Route path=":actor_id" element={<ActorDetails />} />
       </Route>
     
       <Route path="/login" element={<Login />} />

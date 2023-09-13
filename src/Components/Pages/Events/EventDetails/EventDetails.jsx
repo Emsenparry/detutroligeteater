@@ -2,33 +2,23 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import styles from './EventDetails.module.scss';
+import Review from "../../Review/Review";
+import { formatDate } from "../../../Helpers/Helpers";
 
 const EventDetails = () => {
   const [data, setData] = useState({});
   const [actorData, setActorData] = useState([]);
   const { event_id } = useParams();
 
-  const formatDate = (dateString, includeYear) => {
-    const date = new Date(dateString);
-    const options = {
-      month: "short",
-      day: "numeric",
-    };
-    if (includeYear) {
-      options.year = "numeric";
-    }
-    return date.toLocaleDateString("da-DK", options);
-  };
-
   useEffect(() => {
     const getData = async () => {
       try {
         const eventData = await axios.get(
-          `http://localhost:4000/events/${event_id}`
-        );
+          `http://localhost:4000/events/${event_id}`);
+        console.log("Event Data:", eventData.data);
+        
         const actorDataRes = await axios.get(
-          `http://localhost:4000/actors?attributes=id, name, image`
-        );
+          `http://localhost:4000/actors?attributes=id, name, image`);
 
         setData(eventData.data);
         setActorData(actorDataRes.data);
@@ -40,6 +30,7 @@ const EventDetails = () => {
   }, [event_id]);
 
   return (
+    <>
     <section className={styles.eventDetails}>
       {data ? (
         <>
@@ -107,6 +98,10 @@ const EventDetails = () => {
         </>
       ) : null}
     </section>
+    <section>
+      <Review />
+    </section>
+    </>
   );
 };
 

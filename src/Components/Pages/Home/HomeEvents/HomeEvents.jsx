@@ -2,21 +2,10 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styles from "./HomeEvents.module.scss";
 import { Link } from "react-router-dom";
+import { formatDate } from "../../../Helpers/Helpers";
 
 const HomeEvents = () => {
   const [data, setData] = useState([]);
-
-  const formatDate = (dateString, includeYear) => {
-    const date = new Date(dateString);
-    const options = {
-      month: "short",
-      day: "numeric",
-    };
-    if (includeYear) {
-      options.year = "numeric";
-    }
-    return date.toLocaleDateString("da-DK", options);
-  };
 
   useEffect(() => {
     const getData = async () => {

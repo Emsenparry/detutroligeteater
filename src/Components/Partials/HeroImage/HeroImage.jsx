@@ -1,21 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styles from "./HeroImage.module.scss";
+import { formatDate } from "../../Helpers/Helpers";
 
 const HeroImage = () => {
   const [HeroImage, setHeroImage] = useState([]);
 
-  const formatDate = (dateString, includeYear) => {
-    const date = new Date(dateString);
-    const options = {
-      month: "short",
-      day: "numeric",
-    };
-    if (includeYear) {
-      options.year = "numeric";
-    }
-    return date.toLocaleDateString("da-DK", options);
-  };
 
   useEffect(() => {
     const getData = async () => {

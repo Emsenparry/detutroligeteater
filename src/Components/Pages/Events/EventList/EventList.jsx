@@ -3,22 +3,11 @@ import React, { useEffect, useState } from "react";
 import styles from "./Events.module.scss";
 import { Link } from "react-router-dom";
 import Filter from "../../../Partials/Filter/Filter";
+import { formatDate } from "../../../Helpers/Helpers";
 
 const EventList = () => {
   const [eventList, setEventList] = useState([]);
   const [sortingOrder, setSortingOrder] = useState("");
-
-  const formatDate = (dateString, includeYear) => {
-    const date = new Date(dateString);
-    const options = {
-      month: "short",
-      day: "numeric",
-    };
-    if (includeYear) {
-      options.year = "numeric";
-    }
-    return date.toLocaleDateString("da-DK", options);
-  };
 
   const handleSortingOrderChange = (newSortingOrder) => {
     setSortingOrder(newSortingOrder);
