@@ -15,7 +15,7 @@ const Login = () => {
   } = useForm();
   const { loginData, setLoginData } = useAuth();
 
-  const submitHandle = async (e) => {
+  const formSubmit = async (e) => {
     const formData = new URLSearchParams();
     formData.append("username", e.username);
     formData.append("password", e.password);
@@ -58,7 +58,7 @@ const Login = () => {
         {!loginData ? (
           <form
             method="POST"
-            onSubmit={handleSubmit(submitHandle)}
+            onSubmit={handleSubmit(formSubmit)}
             className="loginForm"
           >
             <div className="formGroup">

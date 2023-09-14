@@ -4,18 +4,21 @@ import { Link, useParams } from "react-router-dom";
 import styles from './EventDetails.module.scss';
 import Review from "../../Review/Review";
 import { formatDate } from "../../../Helpers/Helpers";
+import Login from '../../Login/Login';
+import { useAuth } from "../../../Providers/AuthProvider";
+import ReviewPost from "../../Review/ReviewPost/ReviewPost";
 
 const EventDetails = () => {
   const [data, setData] = useState({});
   const [actorData, setActorData] = useState([]);
   const { event_id } = useParams();
+  const { loginData } = useAuth();
 
   useEffect(() => {
     const getData = async () => {
       try {
         const eventData = await axios.get(
           `http://localhost:4000/events/${event_id}`);
-        console.log("Event Data:", eventData.data);
         
         const actorDataRes = await axios.get(
           `http://localhost:4000/actors?attributes=id, name, image`);
@@ -28,6 +31,15 @@ const EventDetails = () => {
     };
     getData();
   }, [event_id]);
+
+  const Message = () => {
+    return( 
+        <section id="ReviewLogin">
+            <h4>Du skal være logget ind for at skrive en anmeldelse</h4>
+            <Login />
+        </section>
+    )
+}
 
   return (
     <>
@@ -98,9 +110,11 @@ const EventDetails = () => {
         </>
       ) : null}
     </section>
-    <section>
-      <Review />
-    </section>
+    <>
+    <Review />
+    {!loginData ? <Message /> : <ReviewPost event_id={event_id} />}
+    </>
+    
     </>
   );
 };

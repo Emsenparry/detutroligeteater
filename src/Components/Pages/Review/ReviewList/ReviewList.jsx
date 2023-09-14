@@ -14,7 +14,6 @@ const ReviewList = () => {
       try{
         const result = await axios.get(`http://localhost:4000/reviews/${event_id}`)
         setReviewList(result.data)
-        console.log(result.data);
 
       } catch(err) {
         console.error(err)
@@ -48,7 +47,7 @@ const ReviewList = () => {
 
 
 const NumStars = (props) => {
-  const [ numStars, setNumStars ] = useState(new Array(5).fill(''));
+  const [ numStars ] = useState(new Array(5).fill(''));
   
   return(
       <div>
