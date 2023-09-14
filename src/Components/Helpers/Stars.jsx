@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 
-const Stars = () => {
-  const [rating, setRating] = useState(null);
+const Stars = ({ rating, setRating }) => {
+  // const [rating, setRating] = useState(null);
   const [rateColor] = useState(null);
   return (
     <>
       {[...Array(5)].map((star, index) => {
-        const currentRate = index + 1
+        const currentRate = index + 1;
         return (
-          <>
+          <React.Fragment key={index}>
             <label>
-              <input 
+              <input
                 type="radio"
                 name="rate"
                 value={currentRate}
-                onClick={() => setRating(currentRate)}
+                checked={currentRate === rating} // Use the rating prop to set checked state
+                onChange={() => setRating(currentRate)}
               />
 
               <AiFillStar
@@ -23,7 +24,7 @@ const Stars = () => {
                 color={currentRate <= (rateColor || rating) ? "yellow" : "grey"}
               />
             </label>
-          </>
+          </React.Fragment>
         );
       })}
     </>
