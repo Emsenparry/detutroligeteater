@@ -2,7 +2,6 @@ import axios from "axios";
 import { useAuth } from "../../../Providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import Stars from "../../../Helpers/Stars";
-import { useState } from "react";
 
 const ReviewPost = (event_id) => {
   const { loginData } = useAuth();
@@ -13,14 +12,12 @@ const ReviewPost = (event_id) => {
     formState: { errors },
   } = useForm();
 
-  const [numStars, setNumStars] = useState(null);
-
   const formSubmit = async (data) => {
     const formData = new URLSearchParams();
     formData.append("event_id", data.event_id);
     formData.append("subject", data.subject);
     formData.append("comment", data.comment);
-    formData.append("num_stars", data.numStars);
+    formData.append("num_stars", data.num_stars);
     console.log(...formData);
 
     const options = {
@@ -49,7 +46,7 @@ const ReviewPost = (event_id) => {
         <input type="hidden" value="1" {...register("event_id")} />
         <h2>Skriv en anmeldelse</h2>
         <div>
-        <Stars num_stars={numStars} setNumStars={setNumStars} />
+        <Stars />
         </div>
         <div>
           <input
