@@ -14,7 +14,7 @@ const AppRouter = () => {
   return (
     <Routes>
       <Route index element={<Home />} />
-      <Route path="/buy" element={<BuyPage />} />
+      <Route path="/tickets/:event_id" element={<BuyPage />} />
       <Route path="/events">
         <Route index element={<Events />} />
         <Route path=":event_id" element={<EventDetails />} />

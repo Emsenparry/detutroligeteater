@@ -76,7 +76,7 @@ const EventDetails = () => {
               </div>
               <div>
               <button className={styles.buy}>
-              <Link to={`/buy`}>KØB BILLET</Link></button>
+              <Link to={`/tickets/${data.id}`}>KØB BILLET</Link></button>
               </div>
             </div>
 
