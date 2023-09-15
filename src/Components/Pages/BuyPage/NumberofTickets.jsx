@@ -13,7 +13,7 @@ const NumberofTickets = () => {
   } = useForm();
 
   const NumTicketChange = (event) => {
-    setNumTickets(event.target.value);
+    setNumTickets(Math.max(0, event.target.value));
   };
 
   useEffect(() => {
