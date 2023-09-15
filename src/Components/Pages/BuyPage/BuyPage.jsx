@@ -50,10 +50,9 @@ const BuyPage = () => {
   
 
   return (
-    <form onSubmit={handleSubmit(formSubmit)}>
       <Layout title="Køb billet">
         <TicketInfo />
-
+        <form onSubmit={handleSubmit(formSubmit)}>
         {/* FORM */}
         <input type="hidden" value={event_id} {...register("event_id")} />
         <div>
@@ -150,11 +149,11 @@ const BuyPage = () => {
         <NumberofTickets />
 
         {/* BUTTON */}
-        <div id="ApproveBtn">
+        <div>
           <button>Godkend bestilling</button>
         </div>
-      </Layout>
     </form>
+    </Layout>
   );
 };
 export default BuyPage;
