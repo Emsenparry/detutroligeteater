@@ -27,8 +27,8 @@ const HomeEvents = () => {
         {data &&
           data.map((item) => {
             return (
-              <>
-                <figure key={item.id}>
+              <React.Fragment key={item.id}>
+                <figure>
                   <img
                     src={require(`../../../../Assets/Images/events/small/${item.image}`)}
                     alt="events"
@@ -54,7 +54,7 @@ const HomeEvents = () => {
                     </div>
                   </figcaption>
                 </figure>
-              </>
+              </React.Fragment>
             );
           })}
       </article>

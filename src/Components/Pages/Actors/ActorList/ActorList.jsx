@@ -26,7 +26,7 @@ const ActorList = () => {
       {actorList &&
         actorList.map((actor) => {
           return (
-            <div>
+            <div key={actor.id}>
               <div className={styles.grid}>
                 <div>
                   <figure>

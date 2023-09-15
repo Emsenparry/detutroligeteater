@@ -9,3 +9,8 @@ export const formatDate = (dateString, includeYear) => {
   }
   return date.toLocaleDateString("da-DK", options);
 };
+
+
+export const PriceToDK = (num) => {
+  return Number(num).toLocaleString('da-DK')
+}
